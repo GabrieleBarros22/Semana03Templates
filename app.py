@@ -1,18 +1,17 @@
 from flask import Flask, render_template
+from datetime import datetime
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/home')
+def home():
+    current_time = datetime.now().strftime("%B %d, %Y %I:%M %p")
+    return render_template('index.html', current_time=current_time)
 
 @app.route('/user/<username>')
 def user(username):
     return render_template('user.html', username=username)
-
-@app.route('/rotainexistente')
-def not_found():
-    return render_template('404.html'), 404
 
 @app.errorhandler(404)
 def page_not_found(e):
