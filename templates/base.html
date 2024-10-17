@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Application{% endblock %}</title>
+
+    <!-- Inclui o arquivo CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Inclui o favicon -->
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
+    <!-- Menu de navegação -->
+    <nav>
+        <div class="logo">Flasky</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#"><img src="https://via.placeholder.com/40" alt="Exemplo de imagem"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Corpo da página -->
     <header>
         <h1>Welcome to Gabriele's Website</h1>
     </header>
