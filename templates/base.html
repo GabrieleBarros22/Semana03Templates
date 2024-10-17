@@ -21,9 +21,10 @@
             color: white; /* Branco ao passar o mouse */
         }
 
-        /* Alinhamento consistente para o conteúdo e o menu */
-        .navbar-brand, .container {
-            margin-left: 50px; /* Ajuste o valor conforme necessário */
+        /* Alinhamento do menu com o texto */
+        .navbar .container {
+            padding-left: 15px; /* Espaçamento igual ao texto */
+            padding-right: 15px; /* Garantindo alinhamento dos dois lados */
         }
 
         /* Título e textos */
@@ -35,22 +36,24 @@
         }
     </style>
     
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand" href="{{ url_for('index') }}">Flasky</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-      </li>
-    </ul>
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('index') }}">Flasky</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
